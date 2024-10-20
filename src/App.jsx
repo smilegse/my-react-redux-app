@@ -1,13 +1,18 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CounterPage from "./pages/CounterPage.jsx";
 import TodoPage from "./pages/TodoPage.jsx";
 
 const App = () => {
     return (
-        <div>
-            {/*<CounterPage/>*/}
-            <TodoPage/>
-        </div>
+
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<CounterPage />} />
+                <Route path="/todo" element={<TodoPage />} />
+            </Routes>
+        </BrowserRouter>
+
     );
 };
 
